@@ -1,0 +1,53 @@
+{
+    "HTML skeleton - BASIC": {
+        "prefix": "!html",
+        "body": [
+            "<!DOCTYPE html>",
+            "<html lang=\"en\">",
+            "",
+            "<head>",
+            "\t<meta charset=\"UTF-8\">",
+            "\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">",
+            "\t<meta name=\"color-scheme\" content=\"${1|light,dark|}\">",
+            "\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+            "\t<title>${2:title}</title>",
+            "</head>",
+            "",
+            "<body>",
+            "\t<div class=\"container\">",
+            "",
+            "\t\t$0",
+            "",
+            "\t</div>",
+            "</body>",
+            "</html>"
+        ]
+    },
+
+    "HTML skeleton with CSS and JS links": {
+        "prefix": "!html+",
+        "body": [
+            "<!DOCTYPE html>",
+            "<html lang=\"en\">",
+            "",
+            "<head>",
+            "\t<meta charset=\"UTF-8\">",
+            "\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">",
+            "\t<meta name=\"color-scheme\" content=\"${1|light,dark|}\">",
+            "\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+            "\t<link rel=\"stylesheet\" href=\"./assets/css/styles.css\">",
+            "\t<title>${2:title}</title>",
+            "</head>",
+            "",
+            "<body>",
+            "\t<div class=\"container\">",
+            "",
+            "\t\t$0",
+            "",
+            "\t</div>",
+            "\t<script src=\"./assets/js/scripts.js\"></script>",
+            "</body>",
+            "</html>"
+        ]
+    }
+}

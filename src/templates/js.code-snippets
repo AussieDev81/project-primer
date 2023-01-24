@@ -1,0 +1,27 @@
+{
+    "Form submit event handler": {
+        "prefix": "!js-form",
+        "description": "Add an event listener to a form submit event",
+        "body": [
+            "document.getElementById(\"${1:elementId}\").addEventListener(\"submit\", (event) => {",
+            "\t",
+            "\tevent.preventDefault;",
+            "\tconst form = event.target;",
+            "\t$0",
+            "\t",
+            "})"
+        ]
+    },
+    
+    "Event Handler": {
+        "prefix": "!js-event",
+        "description": "Add an event listener to an item by its ID",
+        "body": [
+            "document.getElementById(\"${1:elementId}\").addEventListener(\"${2:event}\", (event) => {",
+            "\t",
+            "\t$0",
+            "\t",
+            "})"
+        ]
+    }
+}

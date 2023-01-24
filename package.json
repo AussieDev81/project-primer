@@ -1,0 +1,73 @@
+{
+	"name": "project-primer",
+	"displayName": "Project Primer",
+	"description": "A collection of directories, files, and code snippets to kickstart your  projects",
+	"version": "0.0.1",
+	"icon": "logo.png",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/AussieDev81/project-primer"
+	},
+	"keywords": [
+		"project",
+		"skeleton",
+		"create",
+		"files",
+		"directories"
+	],
+	"engines": {
+		"vscode": "^1.74.0"
+	},
+	"categories": [
+		"Other",
+		"Formatters",
+		"Snippets"
+	],
+	"activationEvents": [
+		"onCommand:project-primer.helloWorld"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "project-primer.createWebSkeleton",
+				"title": "Primer: Create Web Skeleton"
+			},
+			{
+				"command": "project-primer.createHtmlPages",
+				"title": "Primer: Create HTML Pages"
+			}
+		],
+		"snippets": [
+			{
+				"language": "html",
+				"path": "src/templates/html.code-snippets"
+			},
+			{
+				"language": "css",
+				"path": "src/templates/css.code-snippets"
+			},
+			{
+				"language": "javascript",
+				"path": "src/templates/js.code-snippets"
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.74.0",
+		"@types/glob": "^8.0.0",
+		"@types/mocha": "^10.0.1",
+		"@types/node": "16.x",
+		"eslint": "^8.28.0",
+		"glob": "^8.0.3",
+		"mocha": "^10.1.0",
+		"typescript": "^4.9.3",
+		"@vscode/test-electron": "^2.2.0"
+	}
+}
