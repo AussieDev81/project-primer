@@ -1,8 +1,8 @@
 # Project Primer
-![GitHub forks](https://img.shields.io/github/forks/aussiedev81/project-primer?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/AussieDev81/project-primer?style=for-the-badge)
 ![GitHub contributors](https://img.shields.io/github/contributors/AussieDev81/project-primer?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/AussieDev81/project-primer?style=for-the-badge)
-![GitHub](https://img.shields.io/github/license/aussiedev81/project-primer?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/AussieDev81/project-primer?style=for-the-badge)
 
 A simple extension that helps speed up development time by simplifying repetitive tasks we do over and over again.
 
