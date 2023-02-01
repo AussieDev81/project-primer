@@ -25,7 +25,12 @@
 		"Snippets"
 	],
 	"activationEvents": [
-		"onCommand:project-primer.helloWorld"
+		"onCommand:project-primer.createWebSkeleton",
+		"onCommand:project-primer.createHtmlPages",
+		"onCommand:project-primer.iCodeThisProject",
+		"onLanguage:html",
+		"onLanguage:css",
+		"onLanguage:javascript"
 	],
 	"main": "./extension.js",
 	"contributes": {
@@ -37,6 +42,10 @@
 			{
 				"command": "project-primer.createHtmlPages",
 				"title": "Primer: Create HTML Pages"
+			},
+			{
+				"command": "project-primer.iCodeThisProject",
+				"title": "Primer: Create ICodeThis Project"
 			}
 		],
 		"snippets": [
