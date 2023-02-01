@@ -7,13 +7,14 @@ const skeletonGenerator = require("./src/skeletonGenerator");
 function activate(context) {
 
 	context.subscriptions.push(
-
 		//Create web project skeleton
 		vscode.commands.registerCommand("project-primer.createWebSkeleton", () => skeletonGenerator.createWebProject(context)),
 
 		//Create HTML pages
-		vscode.commands.registerCommand("project-primer.createHtmlPages", () => skeletonGenerator.createHtmlPages(context))
+		vscode.commands.registerCommand("project-primer.createHtmlPages", () => skeletonGenerator.createHtmlPages(context)),
 
+		//Create a new iCodeThis project
+		vscode.commands.registerCommand("project-primer.iCodeThisProject", () => skeletonGenerator.createICodeThisProject(context))
 	);
 	
 }
