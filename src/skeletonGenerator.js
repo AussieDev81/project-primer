@@ -17,6 +17,10 @@ const NEW_PAGE_TEMPLATE_PATH = "src/templates/web/template.new-page.html";
 const CSS_TEMPLATE_PATH = "src/templates/web/assets/css/template.styles.css";
 const JS_TEMPLATE_PATH = "src/templates/web/assets/js/template.scripts.js";
 
+const ICT_INDEX_TEMPLATE_PATH = "src/templates/iCodeThis/template.index.html";
+const ICT_CSS_TEMPLATE_PATH = "src/templates/iCodeThis/template.styles.css";
+const ICT_JS_TEMPLATE_PATH = "src/templates/iCodeThis/template.scripts.js";
+
 const SUCCESS_MESSAGE = "Done... Happy coding!";
 
 /**
@@ -50,9 +54,62 @@ function createWebProject(context) {
 	vscode.window.showInformationMessage(SUCCESS_MESSAGE);
 }
 
+/**
+ * Creates a new iCodeThis project skeleton as per the following:
+ * - challenge-name (folder)
+ * 	- index.html
+ * 	- styles.css
+ * 	- scripts.js
+ * @param {vscode.ExtensionContext} context The extension context
+ */
+async function createICodeThisProject(context) {
+	//Get the challenge name
+	try {
+		await vscode.window
+			.showInputBox({
+				prompt: "Enter the challenge name",
+				placeHolder: "E.g. Login Form",
+			})
+			.then((input) => {
+				//Define and format the directory name
+				const projectDirectoryName = input
+					.toLowerCase() //Transform directory name to lower case
+					.trim() //Trim leading and trailing whitespace
+					.replace(/\s/g, "-"); //Replace all whitespace with dashes "-"
+
+				//Path to create
+				const challengeDir = path.join(WORKSPACE_PATH, projectDirectoryName);
+
+				//Create a directory for the challenge
+				fileUtils.createNewDirectory(challengeDir);
+
+				//Create the files in the new directory
+				fileUtils.createNewFileFromTemplate(
+					challengeDir,
+					INDEX_FILENAME,
+					path.join(context.extensionPath, ICT_INDEX_TEMPLATE_PATH)
+				);
+
+				fileUtils.createNewFileFromTemplate(
+					challengeDir,
+					CSS_FILENAME,
+					path.join(context.extensionPath, ICT_CSS_TEMPLATE_PATH)
+				);
+
+				fileUtils.createNewFileFromTemplate(
+					challengeDir,
+					JS_FILENAME,
+					path.join(context.extensionPath, ICT_JS_TEMPLATE_PATH)
+				);
+			});
+	} catch (err) {
+		console.error(err);
+	}
+	vscode.window.showInformationMessage(SUCCESS_MESSAGE);
+}
 
 /**
- * Create one or more HTML files based on user input.  
+ * Create one or more HTML files based on user input.
  * For example, given `about, contact us, privacy, sign in` as input by the user would result in the following files:
  * - about.html
  * - contact-us.html
@@ -99,8 +156,8 @@ async function createHtmlPages(context) {
 	}
 }
 
-
 module.exports = {
 	createWebProject,
+	createICodeThisProject,
 	createHtmlPages,
 };
