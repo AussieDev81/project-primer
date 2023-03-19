@@ -5,7 +5,7 @@
         "body": [
             "document.getElementById(\"${1:elementId}\").addEventListener(\"submit\", (event) => {",
             "\t",
-            "\tevent.preventDefault;",
+            "\tevent.preventDefault();",
             "\tconst form = event.target;",
             "\t$0",
             "\t",
